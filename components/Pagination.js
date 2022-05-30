@@ -19,10 +19,11 @@ const Pagination = ({ currentPage, numPages }) => {
           </Link>
         )}
 
-        {/* { length: numPages } returns [0, 1, 2] */}
+        {/* { length: numPages(2) } returns [0, 1] */}
         {Array.from({ length: numPages }, (_, i) => (
           <Link href={`/blog/page/${i + 1}`}>
             <li
+              key={i}
               className={
                 currentPage === i + 1
                   ? 'relative block py-2 px-3 leading-tight bg-gray-200 border border-gray-300 text-gray-800 mr-1 hover:bg-white cursor-pointer'

@@ -1,12 +1,12 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import ExportedImage from 'next-image-export-optimizer'
 
 import CategoryLabel from './CategoryLabel'
 
 const Post = ({ post }) => {
   return (
     <div className='w-full px-10 py-6 bg-white rounded-lg shadow-md mt-6'>
-      <Image
+      <ExportedImage
         src={post.frontmatter.cover_image}
         alt='post'
         height={420}
@@ -41,7 +41,7 @@ const Post = ({ post }) => {
         </Link>
         <div className='flex items-center space-x-2'>
           <div className='hidden sm:flex'>
-            <Image
+            <ExportedImage
               src={post.frontmatter.author_image}
               alt='author image'
               width={40}
