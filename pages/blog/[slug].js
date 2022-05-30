@@ -5,8 +5,8 @@ import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
 
-import Layout from '../../components/Layout'
-import CategoryLabel from '../../components/CategoryLabel'
+import Layout from '@/components/Layout'
+import CategoryLabel from '@/components/CategoryLabel'
 
 const PostPage = ({
   frontmatter: { title, category, date, cover_image, author, author_image },
