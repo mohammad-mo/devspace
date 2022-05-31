@@ -18,7 +18,7 @@ function postData() {
     return { frontmatter, slug }
   })
 
-  return `export const posts = ${JSON.stringify(posts)}`
+  return `export const posts = ${JSON.parse(JSON.stringify(posts))}`
 }
 
 try {
