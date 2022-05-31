@@ -12,7 +12,7 @@ const Search = () => {
       if (searchTerm === '') {
         setSearchResults([])
       } else {
-        const res = await fetch(`api/search?q=${searchTerm}`)
+        const res = await fetch(`/api/search?q=${searchTerm}`)
         const { results } = await res.json()
         setSearchResults(results)
       }

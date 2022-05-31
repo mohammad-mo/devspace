@@ -57,9 +57,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { category_name } }) {
-  // Reading the posts from posts directory
-  const files = fs.readdirSync(path.join('posts'))
-
   const posts = getPosts()
 
   // Get categories for sildebar
