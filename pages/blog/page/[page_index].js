@@ -70,7 +70,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      posts: JSON.stringify(orderedPosts),
+      posts: orderedPosts,
       numPages,
       currentPage: page,
       categories: uniqueCategorie,

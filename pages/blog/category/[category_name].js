@@ -73,7 +73,7 @@ export async function getStaticProps({ params: { category_name } }) {
 
   return {
     props: {
-      posts: JSON.stringify(categoryPost),
+      posts: categoryPost,
       categoryName: category_name,
       categories: uniqueCategorie,
     },
