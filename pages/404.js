@@ -1,4 +1,4 @@
-import ExportedImage from 'next-image-export-optimizer'
+import Image from 'next/image'
 
 import Layout from '@/components/Layout'
 
@@ -6,7 +6,7 @@ const NotFoundPage = () => {
   return (
     <Layout title='Page Not Found'>
       <div className='flex flex-col items-center mt-20'>
-        <ExportedImage
+        <Image
           src='/images/logo.png'
           width={70}
           height={70}
