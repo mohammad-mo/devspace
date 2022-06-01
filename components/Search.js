@@ -4,6 +4,7 @@ import { FaSearch } from 'react-icons/fa'
 import SearchResults from './SearchResults'
 
 const Search = () => {
+  const [showSearch, setShowSearch] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
   const [searchResults, setSearchResults] = useState([])
 
@@ -22,25 +23,29 @@ const Search = () => {
   }, [searchTerm])
 
   return (
-    <div className='relative bg-gray-600 p-4'>
-      <div className='container mx-auto flex items-center justify-center md:justify-end'>
-        <div className='relative text-gray-600 w-72'>
-          <form onSubmit={(e) => e.preventDefault()}>
-            <input
-              type='search'
-              name='search'
-              id='search'
-              className='bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none w-72'
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder='Search Posts...'
-            />
-            <FaSearch className='absolute top-0 right-0 text-black mt-3 mr-4' />
-          </form>
+    <div className='mx-2 mt-4 mb-2 sm:mt-0 sm:mb-0'>
+      <FaSearch
+        onClick={() => setShowSearch(!showSearch)}
+        className='cursor-pointer text-white text-opacity-80 hover:text-white hover:text-opacity-100 transition'
+      />
+      {showSearch && (
+        <div className='relative container mx-auto flex items-center'>
+          <div className='absolute top-6 sm:top-8 -left-[8.5rem] -right-[8.5rem] sm:left-auto sm:right-0 text-gray-600'>
+            <form onSubmit={(e) => e.preventDefault()}>
+              <input
+                type='search'
+                name='search'
+                id='search'
+                className='bg-slate-100 h-10 px-5 rounded-md text-sm focus:outline-slate-300 w-72'
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder='Search Posts...'
+              />
+            </form>
+          </div>
+          <SearchResults results={searchResults} />
         </div>
-      </div>
-
-      <SearchResults results={searchResults} />
+      )}
     </div>
   )
 }

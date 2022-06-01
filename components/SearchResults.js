@@ -3,9 +3,9 @@ import Post from './Post'
 const SearchResults = ({ results }) => {
   if (results.length === 0) return <></>
   return (
-    <div className='absolute top-20 right-0 md:right-10 z-10 border-4 border-gray-500 bg-white text-black w-full md:w-6/12 rounded-2xl'>
+    <div className='absolute top-20 -inset-x-36 xs:-inset-x-44 sm:inset-x-auto sm:right-0 z-10 border-2 border-slate-300 bg-white text-black min-w-fit sm:w-96 h-96 rounded-md overflow-y-auto'>
       <div className='p-10'>
-        <h2 className='text-3xl mb-'>{results.length} Results</h2>
+        <h2 className='text-3xl'>{results.length} Results</h2>
         {results.map((result, index) => (
           <Post key={index} post={result} compact={true} />
         ))}

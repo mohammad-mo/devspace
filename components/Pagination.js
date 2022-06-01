@@ -13,7 +13,7 @@ const Pagination = ({ currentPage, numPages }) => {
       <ul className='flex pl-0 list-none my-2'>
         {!isFirstPage && (
           <Link href={prevPage}>
-            <li className='relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-gray-800 mr-1 hover:bg-gray-200 cursor-pointer'>
+            <li className='relative block rounded-md py-2 px-3 leading-tight bg-white border border-slate-300 text-gray-800 mr-1 hover:bg-slate-200 cursor-pointer'>
               Previous
             </li>
           </Link>
@@ -25,8 +25,8 @@ const Pagination = ({ currentPage, numPages }) => {
             <li
               className={
                 currentPage === i + 1
-                  ? 'relative block py-2 px-3 leading-tight bg-gray-200 border border-gray-300 text-gray-800 mr-1 hover:bg-white cursor-pointer'
-                  : 'relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-gray-800 mr-1 hover:bg-gray-200 cursor-pointer'
+                  ? 'relative block rounded-md py-2 px-3 leading-tight bg-slate-200 border border-slate-300 text-gray-800 mr-1 hover:bg-white cursor-pointer'
+                  : 'relative block rounded-md py-2 px-3 leading-tight bg-white border border-slate-300 text-gray-800 mr-1 hover:bg-slate-200 cursor-pointer'
               }
             >
               {i + 1}
@@ -36,7 +36,7 @@ const Pagination = ({ currentPage, numPages }) => {
 
         {!isLastPage && (
           <Link href={nextPage}>
-            <li className='relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-gray-800 mr-1 hover:bg-gray-200 cursor-pointer'>
+            <li className='relative block rounded-md py-2 px-3 leading-tight bg-white border border-slate-300 text-gray-800 mr-1 hover:bg-slate-200 cursor-pointer'>
               Next
             </li>
           </Link>

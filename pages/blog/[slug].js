@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 import fs from 'fs'
 import path from 'path'
@@ -14,19 +15,19 @@ const PostPage = ({
   content,
   slug,
 }) => {
+  const router = useRouter()
+
   return (
     <Layout title={title}>
-      <Link href='/blog'>
-        <a
-          passhref='true'
-          className='px-3 py-2 bg-gray-200 rounded shadow font-medium'
+      <div className='w-full px-10 py-6 bg-white rounded-lg shadow-md mt-6'>
+        <button
+          className='px-3 py-1 bg-slate-200 rounded-md shadow'
+          onClick={() => router.back()}
         >
           Go Back
-        </a>
-      </Link>
-      <div className='w-full px-10 py-6 bg-white rounded-lg shadow-md mt-6'>
-        <div className='flex justify-between items-center mt-4'>
-          <h1 className='text-5xl mb-7'>{title}</h1>
+        </button>
+        <div className='flex justify-between items-center my-4 space-x-2'>
+          <h1 className='text-3xl md:text-4xl lg:text-5xl'>{title}</h1>
           <CategoryLabel>{category}</CategoryLabel>
         </div>
         <Image
@@ -37,7 +38,7 @@ const PostPage = ({
           objectFit='contain'
           alt='cover image'
         />
-        <div className='flex justify-between items-center bg-gray-100 p-2 my-8 rounded'>
+        <div className='flex justify-between items-center bg-gray-100 p-2 my-8 rounded-md'>
           <div className='flex items-center'>
             <div className='mx-4 w-10 h-10 hidden sm:block'>
               <Image
