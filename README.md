@@ -1,6 +1,6 @@
 #DevSpace Blog
 
-A blog built with NEXT.js (SSG) and markdown.
+A blog built with NEXT.js (SSG) and markdown.  
 UI: tailwind css
 
 [Demo](https://devspace-two.vercel.app/)
