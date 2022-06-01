@@ -1,4 +1,4 @@
-#DevSpace Blog
+# DevSpace Blog
 
 A blog built with NEXT.js (SSG) and markdown.  
 UI: tailwind css
